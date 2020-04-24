@@ -1,6 +1,23 @@
 <div class="list-container">
-  <h2>Providers</h2>
-  <ul>
-    <li *ngFor="let provider of unselectedProviders">{{ provider.name }}</li>
-  </ul>
+  <h2>Available Providers</h2>
+  <div class="card-container">
+    <div class class="card" *ngFor="let provider of unselectedProviders">
+      <h4 class="name">{{ provider.name }}</h4>
+      <!-- <p>{{ provider.address }}</p>
+      <a href="tel:+{{ provider.phone }}">{{ provider.phone }}</a>
+      <br /> -->
+      <button class="select" (click)="selectProvider(provider.id)">
+        Select
+      </button>
+    </div>
+  </div>
+  <h2>Selected Providers</h2>
+  <div class="card-container">
+    <div class="card" *ngFor="let provider of selectedProviders">
+      <button class="remove" (click)="removeProvider(provider.id)">x</button>
+      <h4 class="name">{{ provider.name }}</h4>
+      <!-- <p>{{ provider.address }}</p>
+      <a href="tel:+{{ provider.phone }}">{{ provider.phone }}</a> -->
+    </div>
+  </div>
 </div>
